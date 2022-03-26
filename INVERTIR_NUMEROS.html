@@ -1,0 +1,28 @@
+// UNIV. TARQUI TICONA CARLOS JAVIER
+//PROGRAMACION - LABORATORIO 4
+//PREGUNTA 1 - INVERTIR UN NUMERO
+// INGRESAR UN NUMERO Y MOSTRAR EL NUMERO DE FORMA INVERTIDA
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main(){
+ cout<<"               UNIV. TARQUI TICONA CARLOS JAVIER   "<<endl;
+ cout<<"--------------------------------------------------------------------"<<endl;
+ cout<<" EL PRESENTE REALIZARA LA SIGUIENTE OPERACION. SE LE PIDE INGRESAR"<<endl;
+ cout<<" UN NUMERO Y LE MOSTRAREMOS SU NUMERO DE FORMA INVERTIDA (maximo de 9 digitos)"<<endl;
+ cout<<"--------------------------------------------------------------------"<<endl;
+ int x,y = 0;
+ cout<<"INGRESE EL NUMERO A INVERTIR: ";
+ cin>>x;
+ while (x !=0){
+ 	y = y *10 + x % 10;
+ 	x = x/10;
+ }
+ cout<<endl;
+ cout<<"EL NUMERO INVETIDO ES: "<<y<<endl;
+ return 0;
+}
+
