@@ -1,0 +1,53 @@
+// UNIV. TARQUI TICONA CARLOS JAVIER
+//PROGRAMACION - LABORATORIO 4
+//PREGUNTA 3 - LECTOR DE CSV
+
+#include<iostream> 
+#include<sstream>
+#include<fstream>
+#define NOMBRE_ARCHIVO "titanic.csv"
+    using namespace std;
+    
+    int main()
+    {
+        ifstream archivo(NOMBRE_ARCHIVO);
+        string linea;
+        char delimitador = ",";
+        //leemos la primera linea para descartarla, pues es el encabezado
+        getline(archivo,linea);
+        //leemos todas las lineas
+        while(getline(archivo,linea))
+        {
+            stringstream stream(linea); //convertir la cadena a un stream
+            string PassengerId,Survived,Pclass,Name,Sex,Age,Sibsp,Parch,Ticket,Fare,Cabin,Embarked;
+            //pasajero,sobrevivió,Pclass,nombre,sexo,años,sibsp,tostar,billete,tarifa,cabina,embarcado;
+            //extraer todos los valores de esa fila
+            getline(stream, PassengerId,delimitador);
+            getline(stream, Survived,delimitador);
+            getline(stream, Pclass,delimitador);
+            getline(stream, Name,delimitador);
+            getline(stream, Sex,delimitador);
+            getline(stream, Age,delimitador);
+            getline(stream, Sibsp,delimitador);
+            getline(stream, Parch,delimitador);
+            getline(stream, Ticket,delimitador);
+            getline(stream, Fare,delimitador);
+            getline(stream, Cabin,delimitador);
+            getline(stream, Embarked,delimitador);
+            //imprimir
+            cout << "========================================"<<endl;
+            cout << " PASAJERO: "<< PassengerId <<endl;
+            cout << " SOBREVIVIO: "<< Survived <<endl;
+            cout << " PCLASS: "<< Pclass <<endl;
+            cout << " NOMBRE: "<< Name <<endl;
+            cout << " SEXO: "<< Sex <<endl;
+            cout << " AÑO: "<< Age <<endl;
+            cout << " SIBSP: "<< Sibsp <<endl;
+            cout << " TOSTAR: "<< Parch <<endl;
+            cout << " BILLETE: "<< Ticket <<endl;
+            cout << " TARIFA: "<< Fare <<endl;
+            cout << " CABINA: "<< Cabin<<endl;
+            cout << " EMBARCADO: "<< Embarked <<endl;
+        }
+        archivo.close();
+    }
